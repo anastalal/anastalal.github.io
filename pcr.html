@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-	<title>Aulaqi PCR Booking page</title>
+	
+	<link rel="stylesheet" href="/build/css/intlTelInput.css">
+	<title>Booking Form HTML Template</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
@@ -17,7 +19,7 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
-
+    <link rel="shortcut icon" href="/img/IMG_20211006_002303-removebg.ico" type="image/x-icon">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -87,7 +89,9 @@
 								<div class="col-md-2">
 									<div class="form-group">
 										<span class="form-label">رقم الهاتف</span>
-										<input type="tel" class="form-control" id="phone" name="phone" placeholder="777-777-777" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+										<input class="form-control" type="tel" name="phone" id="phone"> 
+										<!-- <PhoneInput class="form-control" defaultCountry="RU" value={value} onChange={setValue}/>  -->
+										<!-- <input placeholder="Enter phone number" name="phoneNumber" class="form-control"/> -->
 										<span class="select-arrow"></span>
 									</div>
 								</div>
@@ -95,12 +99,11 @@
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
-										<span class="form-label">بيانات اخرى</span>
+										<span class="form-label">Travel class</span>
 										<select class="form-control">
-											<option>null</option>
-											<option>مكتب</option>
-											<option>منظمة</option>
-											<option>لا شي</option>
+											<option>Economy class</option>
+											<option>Business class</option>
+											<option>First class</option>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
@@ -116,7 +119,25 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> 
+	<script src="/build/js/intlTelInput.js"></script>
+<script>
+  var input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    // any initialisation options go here 
+	
+	
+  }); 
+  intlTelInput(input, {
+  initialCountry: "auto",
+  geoIpLookup: function(success, failure) {
+    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      var countryCode = (resp && resp.country) ? resp.country : "ye";
+      success(countryCode);
+    });
+  },
+});
+</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

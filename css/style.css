@@ -12,6 +12,13 @@ input[type="date"]
     -moz-appearance: textfield;
     min-height: 1.2em;
 }
+input[type="time"]
+{
+    display:block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em;
+}
 @font-face { font-family: Extender; src: url('/font/Hacen\ Extender.ttf'); }
 @media only screen and (min-width: 768px){
 .section .section-center {

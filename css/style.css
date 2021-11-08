@@ -4,6 +4,13 @@
 	height: 180vh; 
 	/* max-height: 150vh; */ 
 	
+} 
+input[type="date"]
+{
+    display:block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em;
 }
 @font-face { font-family: Extender; src: url('/font/Hacen\ Extender.ttf'); }
 @media only screen and (min-width: 768px){

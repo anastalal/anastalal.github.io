@@ -1,23 +1,14 @@
 
+.iti__flag {background-image: url("/build/img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("/build/img/flags@2x.png");}
+}
 .section {
 	position: relative;
 	height: 180vh; 
 	/* max-height: 150vh; */ 
 	
-} 
-input[type="date"]
-{
-    display:block;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    min-height: 1.2em;
-}
-input[type="time"]
-{
-    display:block;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    min-height: 1.2em;
 }
 @font-face { font-family: Extender; src: url('/font/Hacen\ Extender.ttf'); }
 @media only screen and (min-width: 768px){
@@ -154,10 +145,19 @@ span.green{
 	color: #fff; 
 	font-family: Extender;  
 	/* width: 100%; */ 
-	font-size: 9px;  
-	
-
-	
+	font-size: 9px;  	
+}
+input[type="date"]{
+	display: block;
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	min-height: 1.2em;
+}
+input[type="time"]{
+	display: block;
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	min-height: 1.2em;
 }
 @media only screen and (min-width: 768px){ 
 .booking-form  h1 ,h2, h3{
@@ -195,7 +195,7 @@ span.green{
 .form-image{
 	position: absolute;
 	left: 200px;
-	bottom: 50px;
+	bottom: 30px;
 	width: 100px;
 }
 @media only screen and (min-width: 768px) { 
@@ -203,7 +203,7 @@ span.green{
 	position: absolute;
 	left: 500px;
 	bottom: 10px;  
-	width: 200px;
+	width: 250px;
 } }
 .booking-form .form-checkbox label+label {
 	margin-left: 15px;
@@ -237,17 +237,14 @@ span.green{
 .booking-form .form-checkbox input:not(:checked)+span:after {
 	opacity: 0;
 }
-
 .booking-form .form-checkbox input:checked+span:after {
 	opacity: 1;
 	width: 10px;
 	height: 10px;
 }
-
 .booking-form .form-btn {
 	margin-top: 27px;
 }
-
 .booking-form .submit-btn {
 	color: #fff;
 	background-color: #f23e3e;
@@ -261,7 +258,6 @@ span.green{
 	-webkit-transition: 0.2s all;
 	transition: 0.2s all;
 }
-
 .booking-form .submit-btn:hover,
 .booking-form .submit-btn:focus {
 	opacity: 0.9;

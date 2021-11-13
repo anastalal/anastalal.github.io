@@ -74,13 +74,13 @@ if(isset($_POST['submit'])){
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">الاسم</span>
-										<input class="form-control" type="text" placeholder="ادخل الاسم الرباعي">
+										<input class="form-control" type="text" placeholder="ادخل الاسم الرباعي" name="name" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">اسم الفندق</span>
-										<input class="form-control" type="text" placeholder="ادخل اسم الفندق او عنوانك">
+										<input class="form-control" type="text" placeholder="ادخل اسم الفندق او عنوانك" name="hotel" required>
 									</div>
 								</div>
 							</div>
@@ -126,10 +126,17 @@ if(isset($_POST['submit'])){
 										</select>
 										<span class="select-arrow"></span>
 									</div>
+								</div> 
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">الايميل(اختياري)</span>
+										<input class="form-control" type="text" name="email" id="email" placeholder="yourname@gmail.com">
+										<span class="select-arrow"></span>
+									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-btn">
-										<button class="submit-btn">حجز</button>
+										<button type="submit" class="submit-btn" name="submit">حجز</button> 
 									</div>
 								</div>
 							</div>
